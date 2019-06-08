@@ -4,7 +4,7 @@
 ## 1. clone this repository
 
 ```bash
-git clone https://gitlab.com/7labs.ru/tutorials-dvc/tutorial-dvc-1-basics
+git clone https://gitlab.com/7labs.ru/tutorials-dvc/dvc-1-get-started.git
 ```
 
 ## 2. Create and activate virtual enviromnent
@@ -47,7 +47,7 @@ dvc init
 ### commit dvc init
 
 ```bash
-git commit -m "initialize DVC"
+git commit -m "Initialize DVC"
 ``` 
 
     
