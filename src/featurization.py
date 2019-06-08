@@ -6,8 +6,8 @@ def get_features(dataset):
     features = dataset.copy()
 
     # uncomment for step 4.2  Add features
-    features['sepal_length_to_sepal_width'] = features['sepal_length'] / features['sepal_width']
-    features['petal_length_to_petal_width'] = features['petal_length'] / features['petal_width']
+    # features['sepal_length_to_sepal_width'] = features['sepal_length'] / features['sepal_width']
+    # features['petal_length_to_petal_width'] = features['petal_length'] / features['petal_width']
 
     return features
 

@@ -5,6 +5,8 @@
 
 ```bash
 git clone https://gitlab.com/7labs.ru/tutorials-dvc/dvc-1-get-started.git
+
+cd dvc-1-get-started
 ```
 
 ## 2. Create and activate virtual enviromnent
