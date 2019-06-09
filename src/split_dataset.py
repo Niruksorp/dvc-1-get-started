@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 if __name__ == '__main__':
     
     arg_parser = argparse.ArgumentParser()
-    arg_parser.add_argument('test_size', type=float)
+    arg_parser.add_argument('--test_size', type=float)
     args = arg_parser.parse_args()
     
     dataset = pd.read_csv('data/iris_featurized.csv')
