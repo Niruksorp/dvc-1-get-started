@@ -1,6 +1,17 @@
+# folders
+
+## IDEs
 .idea
-__pycache__
+
+## Python
 venv/*
-.ipynb_checkpoints/*
-/src/.ipynb_checkpoints/*
+__pycache__
+.ipynb_checkpoints
+
+
+## Project
+data/*
+
+# files
+
 .DS_Store
