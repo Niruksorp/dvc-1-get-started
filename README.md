@@ -1,7 +1,7 @@
+# Lesson 1 tutorial: Get started 
+**ML REPA School course**: Machine Learning experiments reproducibility and engineering with DVC
 
-# Preparation
-
-## 1. clone this repository
+## 1. Clone this repository
 
 ```bash
 git clone https://gitlab.com/7labs.ru/tutorials-dvc/dvc-1-get-started.git
@@ -10,62 +10,33 @@ cd dvc-1-get-started
 
 ## 2. Create and activate virtual environment
 
+Create virtual environment named `dvc` (you may use other name)
 ```bash
-virtualenv venv
-source venv/bin/activate
+python3 -m venv dvc-venv
+source dvc-venv/bin/activate
 ```
 
-#### Install python libraries (including dvc)
+## 3. Install python libraries
 
 ```bash
 pip install -r requirements.txt
 ```
 
-#### install extension toc for JupyterLab
-
-##### install NodeJS
-
-* Linux (Debian/Ubuntu)
+## 4. Add Virtual Environment to Jupyter Notebook
 
 ```bash
-apt-get install -y curl python3-software-properties
-curl -sL https://deb.nodesource.com/setup_12.x | bash -
-apt-get install -y nodejs
-``` 
-
-* MacOS
-
-```
-https://treehouse.github.io/installation-guides/mac/node-mac.html
+python -m ipykernel install --user --name=dvc-venv
 ```
 
-#### install toc
+## 5. Configure ToC for jupyter notebook (optional)
 
 ```bash
-jupyter labextension install @jupyterlab/toc
+sudo jupyter contrib nbextension install
+jupyter nbextension enable toc2/main
 ```
 
-    
-### checkout new branch in demo repository (to not wipe content of master branch)
+## 6. Run and follow Jupyter Notebook `dvc-1-get-started.ipynb` for instructions:
 
 ```bash
-git checkout -b dvc-tutorial
-``` 
-
-# Step 1. Initialize & Setup DVC
-
-In general https://dvc.org/doc/get-started/initialize 
-1) project repository should have initiated .git (git init) 
-2) than: dvc init - initiate DVC  
-
-For this case: 
-1) git is already initiated 
-
-# Continue DVC tutorial
-
-## Run notebook tutorial.ipynb
-
-```bash
-jupyter-lab tutorial.ipynb
+jupyter notebook
 ```
-    

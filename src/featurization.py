@@ -4,6 +4,11 @@ import pandas as pd
 def get_features(dataset):
 
     features = dataset.copy()
+    # Rename columns: replace (cm) and spaces
+    features.rename(
+        columns=lambda s: s.replace('(cm)', '').strip().replace(' ', '_'),
+        inplace=True
+    )
 
     # uncomment for step 5.2  Add features
     # features['sepal_length_to_sepal_width'] = features['sepal_length'] / features['sepal_width']
