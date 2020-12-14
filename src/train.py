@@ -9,8 +9,8 @@ if __name__ == '__main__':
     train_dataset = pd.read_csv('data/train.csv')
 
     # Get X and Y
-    y = train_dataset.loc[:, 'species'].values.astype("float32")
-    X = train_dataset.drop('species', axis=1).values
+    y = train_dataset.loc[:, 'target'].values.astype("float32")
+    X = train_dataset.drop('target', axis=1).values
 
     # Create an instance of Logistic Regression Classifier and fit the data.
     clf = LogisticRegression(C=0.01, solver='lbfgs', multi_class='multinomial', max_iter=100)

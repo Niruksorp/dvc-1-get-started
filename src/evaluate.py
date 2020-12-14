@@ -6,11 +6,11 @@ import joblib
 
 if __name__ == '__main__':
     
-    classes = pd.read_csv('data/iris.csv')['species'].unique().tolist()
+    classes = pd.read_csv('data/iris.csv')['target'].unique().tolist()
     
     test_dataset = pd.read_csv('data/test.csv')
-    y = test_dataset.loc[:, 'species'].values.astype("float32")
-    X = test_dataset.drop('species', axis=1).values
+    y = test_dataset.loc[:, 'target'].values.astype("float32")
+    X = test_dataset.drop('target', axis=1).values
     
     clf = joblib.load('data/model.joblib')
     

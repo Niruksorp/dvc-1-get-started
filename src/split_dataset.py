@@ -12,11 +12,6 @@ if __name__ == '__main__':
     
     dataset = pd.read_csv('data/iris_featurized.csv')
     
-    # transform targets (species) to numerics
-    dataset.loc[dataset.species=='setosa', 'species'] = 0
-    dataset.loc[dataset.species=='versicolor', 'species'] = 1
-    dataset.loc[dataset.species=='virginica', 'species'] = 2
-    
     # Split in train/test
 
     df_train, df_test = train_test_split(dataset, test_size=args.test_size, random_state=42)

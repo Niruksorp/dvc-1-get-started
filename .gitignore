@@ -4,13 +4,10 @@
 .idea
 
 ## Python
-venv/*
+dvc-venv/*
 __pycache__
 .ipynb_checkpoints
 
-
-## Project
-data/*
 
 # files
 
