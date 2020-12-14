@@ -1,14 +1,24 @@
 # folders
 
 ## IDEs
-.idea
+.idea/
 
-## Python
-dvc-venv/*
+## Cache
 __pycache__
 .ipynb_checkpoints
+
+## Project
+data/*
+experiments/*
+models/*
+dvc-venv/*
 
 
 # files
 
+## Mac OS
 .DS_Store
+
+## Configs
+.env
+config/*.json
