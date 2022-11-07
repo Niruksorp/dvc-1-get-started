@@ -2,29 +2,23 @@ import json
 import pandas as pd
 from sklearn.metrics import confusion_matrix, f1_score
 import joblib
-
+from sklearn.metrics import accuracy_score
 
 if __name__ == '__main__':
-    
-    classes = pd.read_csv('data/iris.csv')['target'].unique().tolist()
-    
-    test_dataset = pd.read_csv('data/test.csv')
-    y = test_dataset.loc[:, 'target'].values.astype("float32")
-    X = test_dataset.drop('target', axis=1).values
-    
+
+    X_test = pd.read_csv('data/prepared/X_test.csv')
+    y_test = pd.read_csv('data/prepared/y_test.csv')
+
     clf = joblib.load('data/model.joblib')
-    
-    prediction = clf.predict(X)
-    cm = confusion_matrix(prediction, y)
-    f1 = f1_score(y_true=y, y_pred=prediction, average='macro')
+    prediction = clf.predict(X_test)
+
+    # check accuracy
+    accuracy_score = accuracy_score(y_test, prediction)
+    print(accuracy_score)
 
     json.dump(
         obj={
-            'f1_score': f1,
-            'confusion_matrix': {
-                'classes': classes,
-                'matrix': cm.tolist()
-            }
+            'accuracy_score': accuracy_score
         },
-        fp=open('data/eval.txt', 'w')
+        fp=open('metrics/accuracy.json', 'w')
     )

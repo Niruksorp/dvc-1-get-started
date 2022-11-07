@@ -1,19 +1,22 @@
+import np as np
 import pandas as pd
-from sklearn.linear_model import LogisticRegression
+import numpy as np
+from sklearn.tree import DecisionTreeClassifier
+from sklearn import tree
+from sklearn.metrics import accuracy_score
+
 import joblib
 
-
 if __name__ == '__main__':
+    X_train = pd.read_csv('data/prepared/X_train.csv')
+    y_train = pd.read_csv('data/prepared/y_train.csv')
 
-    # Load train set
-    train_dataset = pd.read_csv('data/train.csv')
+    # create classifier
+    from sklearn.tree import DecisionTreeClassifier
+    from sklearn import tree
 
-    # Get X and Y
-    y = train_dataset.loc[:, 'target'].values.astype("float32")
-    X = train_dataset.drop('target', axis=1).values
+    classifier = DecisionTreeClassifier(criterion="entropy")
+    # Applying classifier on training data
+    classifier = classifier.fit(X_train, y_train)
+    joblib.dump(classifier, 'model/model.joblib')
 
-    # Create an instance of Logistic Regression Classifier and fit the data.
-    clf = LogisticRegression(C=0.01, solver='lbfgs', multi_class='multinomial', max_iter=100)
-    clf.fit(X, y)
-
-    joblib.dump(clf, 'data/model.joblib')
