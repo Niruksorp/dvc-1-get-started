@@ -9,7 +9,7 @@ if __name__ == '__main__':
     X_test = pd.read_csv('data/prepared/X_test.csv')
     y_test = pd.read_csv('data/prepared/y_test.csv')
 
-    clf = joblib.load('data/model.joblib')
+    clf = joblib.load('model/model.joblib')
     prediction = clf.predict(X_test)
 
     # check accuracy
