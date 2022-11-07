@@ -4,7 +4,6 @@ stages :
 test:
     stage: test
     before_script:
-    - chcp 65001
     - pip install --user -r requirements.txt
     script:
     - echo "Start testing"
