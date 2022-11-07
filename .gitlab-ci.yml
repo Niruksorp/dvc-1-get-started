@@ -8,7 +8,7 @@ test:
     - pip install --user -r requirements.txt
     script:
     - echo "Start testing"
-    - cd tests
-    - python -m pytest tests.py -v
+    - cd src/tests
+    - python -m pytest test.py -v
     - echo "End testing"
     - cd ..
